@@ -1,0 +1,6 @@
+version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
+options: "b4e9c1ad18067a11a54fcefb63f112e4"
+build_time: [537029849, 597881000]
+inputs:
+  "/Users/stitch/Documents/Informatique/iOS/iOS10/6-REST Apps/pokedex10/pokedex10/ViewController.swift": [537029846, 0]
+  "/Users/stitch/Documents/Informatique/iOS/iOS10/6-REST Apps/pokedex10/pokedex10/AppDelegate.swift": [537029846, 0]
