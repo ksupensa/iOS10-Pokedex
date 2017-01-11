@@ -21,7 +21,7 @@ func parsePokeCSV(writeCode: (_ id: Int,_ name: String)->()){
     do {
         let csv = try CSV(contentsOfURL: path)
         let rows = csv.rows
-        print(rows)
+        //print(rows)
         
         for row in rows {
             let pokeID = Int(row["id"]!)!
