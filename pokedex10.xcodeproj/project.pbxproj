@@ -22,6 +22,7 @@
 		F7A856FA1E26295D007F3708 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A856F91E26295D007F3708 /* DetailVC.swift */; };
 		F7BE4DE01E251DBE0062928A /* pokemon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7BE4DDF1E251DBE0062928A /* pokemon.ttf */; };
 		F7BE4DE21E251EB80062928A /* csvData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE4DE11E251EB80062928A /* csvData.swift */; };
+		F7DAC0751E27AAAC00FFADE2 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DAC0741E27AAAC00FFADE2 /* constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F7A856F91E26295D007F3708 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		F7BE4DDF1E251DBE0062928A /* pokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pokemon.ttf; sourceTree = "<group>"; };
 		F7BE4DE11E251EB80062928A /* csvData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csvData.swift; sourceTree = "<group>"; };
+		F7DAC0741E27AAAC00FFADE2 /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				F77C79031E24EE2C0006F0E6 /* CSV.swift */,
+				F7DAC0741E27AAAC00FFADE2 /* constants.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				F763CC081E23C251007BB37F /* PokeCell.swift in Sources */,
 				F721008C1E1FE7D600E6EDFF /* mainVC.swift in Sources */,
+				F7DAC0751E27AAAC00FFADE2 /* constants.swift in Sources */,
 				F77C79041E24EE2C0006F0E6 /* CSV.swift in Sources */,
 				F7BE4DE21E251EB80062928A /* csvData.swift in Sources */,
 				F721008A1E1FE7D600E6EDFF /* AppDelegate.swift in Sources */,
