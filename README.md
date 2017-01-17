@@ -3,5 +3,10 @@
 Pokedex app for iPhone.
 
 ### Concept used:
-* UITableview
-
+* AVAudioPlayer
+* Closure
+* CocoPod:
+  * Alamofire (web request)
+  * Restful API
+* UICollectionView
+* UISearchBar
