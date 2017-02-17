@@ -11,4 +11,4 @@ Pokedex app for iPhone.
 * UICollectionView
 * UISearchBar
 
-## All the content(code, resources, etc...) are for educational purpose only under 'fair use' and should be used as such.
+## All the content(code, resources, etc...) are for educational purpose only under 'fair use'.
