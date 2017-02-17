@@ -10,3 +10,5 @@ Pokedex app for iPhone.
   * Restful API
 * UICollectionView
 * UISearchBar
+
+##### All the content(code+resources) are for educational purpose only under 'fair use' and should be use as such
