@@ -13,6 +13,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     @IBOutlet weak var uisearchBar: UISearchBar!
     @IBOutlet weak var collection: PokeCollection!
+    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
     
     var pokemons = [Pokemon]()
     var filteredPokemons = [Pokemon]()
@@ -47,6 +48,57 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         view.addGestureRecognizer(tap)
         
         initAudio()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(MainVC.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainVC.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    internal func keyboardWillShow(notification: NSNotification) {
+        updateLayout(notification: notification)
+    }
+    
+    internal func keyboardWillHide(notification: NSNotification) {
+        updateLayout(notification: notification)
+    }
+    
+    private func updateLayout(notification: NSNotification) {
+        let userInfo = notification.userInfo!
+        let keyboardFrameEnd = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let convertedKFE = view.convert(keyboardFrameEnd, from: view.window)
+        
+        // update bottom layout constraint
+        bottomLayoutConstraint.constant = 16 + (view.bounds.maxY - convertedKFE.minY)
+        
+        let rawAnimationCurve = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).intValue
+        let viewAnimationCurve = UIViewAnimationCurve(rawValue: rawAnimationCurve)!
+        let animationCurve = animationOptionsWithCurve(curve: viewAnimationCurve)
+        
+        let animationDuration = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: [UIViewAnimationOptions.beginFromCurrentState, animationCurve],animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+     private func animationOptionsWithCurve(curve:UIViewAnimationCurve) -> UIViewAnimationOptions
+    {
+        switch (curve) {
+        case .easeInOut:
+            return .curveEaseOut;
+        case .easeIn:
+            return .curveEaseIn;
+        case .easeOut:
+            return .curveEaseOut;
+        case .linear:
+            return .curveLinear;
+        }
     }
     
     func dismissKeyboard(){

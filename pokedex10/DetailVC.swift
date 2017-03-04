@@ -24,6 +24,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var evoLbl: UILabel!
     @IBOutlet weak var currentEvoImg: UIImageView!
     @IBOutlet weak var nextEvoImg: UIImageView!
+    @IBOutlet weak var loadingView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,12 @@ class DetailVC: UIViewController {
         currentEvoImg.image = img
         
         pokemon.downloadPokemoDetails {
+            
             self.updateUI()
+            
+            if !self.loadingView.isHidden {
+                self.loadingView.isHidden = true
+            }
         }
     }
     
